@@ -1,7 +1,9 @@
 * {
   padding:0;
   margin:0;
-  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  max-width: 960px;
+  font-family: 'Helvetica', sans-serif;
 }
 
 .clearfix {
@@ -15,7 +17,7 @@
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #C0C0C0;
   line-height: 48px;
   display: inline;
 }
@@ -23,7 +25,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999999;
+  color: #C0C0C0;
   line-height: 29px;
   padding: 10px;
 }
@@ -79,6 +81,10 @@ a {
   display: block;
 }
 
+.role {
+  color: #7788AA;
+}
+
 .welcome-message {
   font-style: italic;
   font-size: 18px;
@@ -87,7 +93,7 @@ a {
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #4E638E;
   display: none;
 }
 
@@ -116,7 +122,8 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  /* background-color: #484848; */
+   background-color: #4A4A4A; 
 }
 
 .flex-box {
@@ -168,6 +175,7 @@ span {
 }
 
 #letsConnect {
+  padding: 3px;
   text-align: center;
 }
 
@@ -205,7 +213,7 @@ span {
 #mapDiv {
   height: 400px;
   width: 100%;
-  padding-bottom: 5%;
+  padding-bottom: 7.5%;
 }
 
 @media only screen and (min-width: 750px) {
