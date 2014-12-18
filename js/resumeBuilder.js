@@ -105,6 +105,7 @@ var projects = {
 		"dates" : "June 2014-December 2014",
 		"description" : "Project Manager for Exchange 2014 High Availability and Disaster Recovery project migrating enterprise from Exchange 2010. Project included main site high availability configuration and a secondary datacenter with replication between sites.",
 		"images" : ["images/197x148.gif", "images/197x148.gif"],
+		// added location so places where I've done projects at will show up on the map! 
 		"location" : "Sacramento, California"
 	},
 	{
@@ -179,16 +180,16 @@ var education = {
 	{
 		"name" : "University of California, Riverside",
 		"degree": "Bachelor of Arts", 
-		"major": "History and Administrative Studies",
-		"dates": "1997-2001",
+		"majors": ["History and Administrative Studies"],
+		"dates": 2001,
 		"location" : "Riverside, California",
 		"url" : "http://www.ucr.edu"
 	},
 	{
 		"name" : "University of San Francisco",
 		"degree" : "Master of Science",
-		"major": "Information Systems",
-		"dates": "2007-2009",
+		"majors": ["Information Systems"],
+		"dates": 2009,
 		"location" : "Sacramento, California",
 		"url" : "http://www.usfca.edu"
 	}
@@ -197,19 +198,19 @@ var education = {
 	{
 		"title" : "Intro to HTML and CSS",
 		"school" : "Udacity",
-		"dates" : "December 2014",
+		"dates" : 2014,
 		"url" : "https://www.udacity.com/course/ud304"
 	},
 	{
 		"title" : "How to Use Git and GitHub",
 		"school" : "Udacity",
-		"dates" : "December 2014",
+		"dates" : 2014,
 		"url" : "https://www.udacity.com/course/ud775"
 	},
 	{
 		"title" : "JavaScript Basics",
 		"school" : "Udacity",
-		"dates" : "December 2014",
+		"dates" : 2014,
 		"url" : "https://www.udacity.com/course/ud804"
 	}
 	],
@@ -219,11 +220,18 @@ var education = {
 			$("#education").append(HTMLschoolStart);
 
 			var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name );
-			var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree );;
-			var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates );;
-			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location );;
-			var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major );; 
-			$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree + formattedSchoolDates + formattedSchoolLocation + formattedSchoolMajor);
+			var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree );
+			var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates );
+			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location );
+			var formattedSchoolMajors = "";
+
+			for (major in education.schools[school].majors)
+			{
+				var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major] );
+				formattedSchoolMajors += formattedSchoolMajor;
+			}
+			
+			$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree + formattedSchoolDates + formattedSchoolLocation + formattedSchoolMajors);
 		}
 
 		$("#education").append(HTMLonlineClasses);
